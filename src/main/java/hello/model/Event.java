@@ -12,6 +12,9 @@ public class Event {
     @GeneratedValue
     private Integer id;
 
+    @Column(name = "text_id")
+    private String textId;
+
     @Column(name = "title")
     private String title;
 
@@ -29,6 +32,14 @@ public class Event {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getTextId() {
+        return textId;
+    }
+
+    public void setTextId(String textId) {
+        this.textId = textId;
     }
 
     @Override

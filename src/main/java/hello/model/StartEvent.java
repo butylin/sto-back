@@ -9,6 +9,10 @@ public class StartEvent {
     private String operator;
     private Integer value;
     private String strategy;
+    private Integer period;
+    private String logicalOperator;
+    private String type;
+
 
     public Integer getColId() {
         return colId;
@@ -48,6 +52,30 @@ public class StartEvent {
 
     public void setStrategy(String strategy) {
         this.strategy = strategy;
+    }
+
+    public Integer getPeriod() {
+        return period;
+    }
+
+    public void setPeriod(Integer period) {
+        this.period = period;
+    }
+
+    public String getLogicalOperator() {
+        return logicalOperator;
+    }
+
+    public void setLogicalOperator(String logicalOperator) {
+        this.logicalOperator = logicalOperator;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     @Override

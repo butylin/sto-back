@@ -7,9 +7,18 @@ import java.util.List;
  */
 public class Rule {
 
+    private String name;
     private List<StartEvent> startEvents;
     private Condition condition;
     private Event action;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public List<StartEvent> getStartEvents() {
         return startEvents;

@@ -1,10 +1,21 @@
 package hello.model;
 
+import javax.persistence.*;
+
 /**
  * Created by serg on 20-Jul-18.
  */
+@Entity
+@Table(name = "sensors")
 public class Sensor {
+    @Id
+    @GeneratedValue
     private String id;
+
+    @Column(name = "text_id")
+    private String textId;
+
+    @Column(name = "title")
     private String title;
 
     public Sensor() {
@@ -29,6 +40,14 @@ public class Sensor {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public String getTextId() {
+        return textId;
+    }
+
+    public void setTextId(String textId) {
+        this.textId = textId;
     }
 
     @Override

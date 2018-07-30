@@ -7,6 +7,7 @@ import java.util.List;
  */
 public class ComplexCondition {
     private List<Param> parameters;
+    private String formula;
     private Integer threshold;
     private String strategy;
 
@@ -32,5 +33,13 @@ public class ComplexCondition {
 
     public void setStrategy(String strategy) {
         this.strategy = strategy;
+    }
+
+    public String getFormula() {
+        return formula;
+    }
+
+    public void setFormula(String formula) {
+        this.formula = formula;
     }
 }

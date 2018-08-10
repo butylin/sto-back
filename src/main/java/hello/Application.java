@@ -26,6 +26,9 @@ public class Application {
                 .enable(DeserializationFeature.FAIL_ON_READING_DUP_TREE_KEY );
     }
 
+    @Bean
+    public
+
 //    @Bean
 //    public Connection connection(){
 //        try {

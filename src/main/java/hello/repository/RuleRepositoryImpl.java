@@ -16,7 +16,7 @@ import java.util.Map;
 @Repository
 public class RuleRepositoryImpl implements RuleRepository {
     @Autowired
-    SimpleJdbcInsertOperations jdbcDriver;
+    SimpleJdbcInsertOperations simpleJdbcInsertOperations;
 
     @Autowired
     JdbcTemplate jdbcTemplate;
@@ -32,13 +32,16 @@ public class RuleRepositoryImpl implements RuleRepository {
     private Integer createRuleRecord(Rule rule){
         Map<String, Integer> sqlInsert = new HashMap<>();
         sqlInsert.put("start_event_id", 1);
-        KeyHolder keyHolder = jdbcDriver.executeAndReturnKeyHolder(sqlInsert);
+        KeyHolder keyHolder = simpleJdbcInsertOperations.executeAndReturnKeyHolder(sqlInsert);
         Integer newRuleId = keyHolder.getKey().intValue();
 
         return newRuleId;
     }
 
     private void creteRuleMonitorTable(Integer ruleId){
-        final String CREATE_RULE_MONITOR_TEMPLATE = "";
+        final String CREATE_RULE_MONITOR_TEMPLATE = "CREATE TABLE `monitor_rule_%s` (`id` INT NOT NULL AUTO_INCREMENT, `value` VARCHAR(45) NULL, PRIMARY KEY (`id`));";
+        String sqlQuery = String.format(CREATE_RULE_MONITOR_TEMPLATE, ruleId);
+        jdbcTemplate.execute(sqlQuery);
+
     }
 }
